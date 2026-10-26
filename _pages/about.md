@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: Your role, Your institution # TODO
+subtitle: Adventuring through life &middot; Radio Frequency Devices and Semiconductors
 
 profile:
   align: right
-  image: prof_pic.jpg # TODO: replace assets/img/prof_pic.jpg with your photo
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
 
 selected_papers: false # set to true once _bibliography/papers.bib has entries marked selected={true}
@@ -21,4 +21,8 @@ latest_posts:
   enabled: false
 ---
 
-<!-- TODO: 2–3 sentences about who you are, your field, and what you work on. -->
+This is my personal portfolio where I focus on outlining my current personal projects and detail my life in more detail. I'm an Indian who has spent a major part of his life in Tbilisi, Georgia and spent time working and studying in the United States.
+
+I enjoy building things, and my ultimate goal here is to build multiple discrete RF components from discrete parts at WiFi ISM bands.
+
+<img src="{{ '/assets/img/banner.jpg' | relative_url }}" alt="Snow-covered mountain range" class="img-fluid rounded z-depth-1 mt-3 mb-4" style="clear: both;">
