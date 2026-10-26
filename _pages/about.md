@@ -21,8 +21,27 @@ latest_posts:
   enabled: false
 ---
 
+<style>
+  .container[role="main"] { position: relative; z-index: 1; }
+  html, body { overflow-x: clip; }
+  .hero-mountains {
+    position: absolute;
+    z-index: -1;
+    top: -3rem;
+    left: 50%;
+    width: 100vw;
+    height: 620px;
+    transform: translateX(-50%);
+    background: url("{{ '/assets/img/banner.jpg' | relative_url }}") center 35% / cover no-repeat;
+    opacity: 0.5;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.75) 45%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.75) 45%, transparent 100%);
+    pointer-events: none;
+  }
+  html[data-theme="dark"] .hero-mountains { opacity: 0.35; }
+</style>
+<div class="hero-mountains" aria-hidden="true"></div>
+
 This is my personal portfolio where I focus on outlining my current personal projects and detail my life in more detail. I'm an Indian who has spent a major part of his life in Tbilisi, Georgia and spent time working and studying in the United States.
 
 I enjoy building things, and my ultimate goal here is to build multiple discrete RF components from discrete parts at WiFi ISM bands.
-
-<img src="{{ '/assets/img/banner.jpg' | relative_url }}" alt="Snow-covered mountain range" class="img-fluid rounded z-depth-1 mt-3 mb-4" style="clear: both;">
