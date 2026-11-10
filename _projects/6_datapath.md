@@ -22,3 +22,12 @@ A custom CMOS 8-bit datapath designed in Cadence Virtuoso on the AMIC5N process.
 - 8-bit domino decoder: 300–900 ps
 - Full datapath: under 10 ns
 - Transistor density: 0.0112 transistors/µm²
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/datapath_blocks.png" title="SRAM and domino decoder layouts" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Layouts of the SRAM and the domino decoder.
+</div>
