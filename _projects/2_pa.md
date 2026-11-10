@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My first (failed) PA
+title: MY FIRST (FAILED) PA
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
 img: assets/img/projects/pa_board.png
 importance: 3

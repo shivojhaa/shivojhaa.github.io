@@ -1,6 +1,6 @@
 ---
 layout: page
-title: FnCAD2D
+title: FNCAD2D
 description: A 2D device simulator for GaN HEMTs with Fermi kinetics transport
 importance: 1
 category: research

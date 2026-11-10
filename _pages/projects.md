@@ -12,7 +12,7 @@ horizontal: false
 <style>
   /* Every card: same title size, titles wrapped evenly, and one picture area of the same height.
      Pictures are shown whole (never cropped) on the colour of their own background; the photo fills its area. */
-  .projects .card-title { font-size: 1.6rem; line-height: 1.25; text-wrap: balance; }
+  .projects .card-title { font-size: 1.4rem; line-height: 1.25; letter-spacing: 0.02em; text-wrap: balance; }
   .projects .card-img-top { width: 100%; height: 230px; object-fit: contain; background: #fff; }
   .projects .card-img-top[src*="pa_board"] { object-fit: cover; }
   .projects .card-img-top[src*="lpf_layout"] { background: #000; }

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Substrate Integrated Waveguide and Power Divider
+title: SUBSTRATE INTEGRATED WAVEGUIDE AND POWER DIVIDER
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
 img: assets/img/projects/siw_model.png
 importance: 5
