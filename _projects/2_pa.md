@@ -3,7 +3,7 @@ layout: page
 title: My first (failed) PA
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
 img: assets/img/projects/pa_board.png
-importance: 2
+importance: 3
 category: coursework
 ---
 

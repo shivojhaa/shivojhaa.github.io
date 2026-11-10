@@ -3,7 +3,7 @@ layout: page
 title: Substrate integrated waveguide and power divider
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
 img: assets/img/projects/siw_model.png
-importance: 4
+importance: 5
 category: coursework
 ---
 
