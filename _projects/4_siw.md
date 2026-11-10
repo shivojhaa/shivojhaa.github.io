@@ -2,9 +2,19 @@
 layout: page
 title: Substrate integrated waveguide and power divider
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+img: assets/img/projects/siw_model.png
 importance: 4
 category: coursework
 ---
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/projects/siw_model.png" title="HFSS model of the waveguide" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    HFSS model of the waveguide.
+</div>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
