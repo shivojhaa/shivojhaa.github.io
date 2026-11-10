@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 8-bit datapath
+title: 8-Bit Datapath
 description: A custom CMOS 8-bit datapath in Cadence Virtuoso. I designed the SRAM and the domino decoder and routed the components. Awarded the Outstanding Project Award.
 img: assets/img/projects/datapath_layout.png
 importance: 2

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 3 GHz patch antenna
+title: "Patch Antenna: 3 GHz"
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
 img: assets/img/projects/patch_board.png
 importance: 6
