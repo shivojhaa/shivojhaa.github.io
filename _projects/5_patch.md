@@ -3,7 +3,7 @@ layout: page
 title: 3 GHz patch antenna
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
 img: assets/img/projects/patch_board.png
-importance: 5
+importance: 6
 category: coursework
 ---
 

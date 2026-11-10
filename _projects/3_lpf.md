@@ -3,7 +3,7 @@ layout: page
 title: Stepped-impedance low-pass filter
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
 img: assets/img/projects/lpf_layout.png
-importance: 3
+importance: 4
 category: coursework
 ---
 
