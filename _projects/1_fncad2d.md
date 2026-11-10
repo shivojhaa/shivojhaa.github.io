@@ -67,3 +67,9 @@ al. (2022), which compares FKT with a commercial hydrodynamic solver on a fully 
   negligible density in one Newton step fixed it without changing any result.
 - **Exactness matters at equilibrium.** The paper's arithmetic-mean temperature in the flux produces spurious current next
   to the degenerate 2DEG; a logarithmic mean makes the equilibrium current vanish exactly.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
