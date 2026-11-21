@@ -16,7 +16,7 @@ category: coursework
     Layout of the filter.
 </div>
 
-An ECE 404 project, done with a lab partner. The filter is a fifth-order equal-ripple (Chebyshev) low-pass design on a Rogers RO4350 board (ε_r = 3.55, 1.524 mm thick) in a 50 Ω system. The specification: under 0.5 dB insertion loss up to 1.1 GHz, more than 16.5 dB attenuation from 1.7 GHz up, and more than 12 dB return loss in the passband, in under 4 in × 1.5 in with no line narrower than 0.4 mm.
+An ECE 404 project, done with Avery Wiklund (now at CU Boulder, working with Dr. Taylor Barton). The filter is a fifth-order equal-ripple (Chebyshev) low-pass design on a Rogers RO4350 board (ε_r = 3.55, 1.524 mm thick) in a 50 Ω system. The specification: under 0.5 dB insertion loss up to 1.1 GHz, more than 16.5 dB attenuation from 1.7 GHz up, and more than 12 dB return loss in the passband, in under 4 in × 1.5 in with no line narrower than 0.4 mm.
 
 ## Design
 

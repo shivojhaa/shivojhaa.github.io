@@ -16,7 +16,7 @@ category: coursework
     The fabricated board.
 </div>
 
-An ECE 404 project, done with a lab partner: design, build and measure an RF power amplifier around the Skyworks SKY65050 GaAs pHEMT on a Rogers RO4350B board, for the 0.8 to 1.2 GHz band in a 50 Ω system. The targets were S21 = 17 dB ± 1 dB, and S11 and S22 below −8 dB across the band.
+An ECE 404 project, done with Avery Wiklund (now at CU Boulder, working with Dr. Taylor Barton): design, build and measure an RF power amplifier around the Skyworks SKY65050 GaAs pHEMT on a Rogers RO4350B board, for the 0.8 to 1.2 GHz band in a 50 Ω system. The targets were S21 = 17 dB ± 1 dB, and S11 and S22 below −8 dB across the band.
 
 ## Design
 

@@ -16,7 +16,7 @@ category: coursework
     The fabricated patch antenna.
 </div>
 
-An ECE 405 project, done with a lab partner. We designed a rectangular inset-fed patch antenna for 3 GHz on a 50 × 50 mm Rogers RO4350B board, with a 50 Ω microstrip feed and an SMA connector.
+An ECE 405 project, done with Grant Bell. We designed a rectangular inset-fed patch antenna for 3 GHz on a 50 × 50 mm Rogers RO4350B board, with a 50 Ω microstrip feed and an SMA connector.
 
 ## Design
 

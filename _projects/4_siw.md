@@ -16,7 +16,7 @@ category: coursework
     HFSS model of the waveguide.
 </div>
 
-An ECE 405 project, done with a lab partner. A substrate integrated waveguide (SIW) guides the TE10 mode between two walls of vias in a PCB, with lower loss than microstrip in S-band. We designed a two-port waveguide and a three-port power divider in Ansys HFSS on a Rogers substrate, with triangular tapers from microstrip to 50 Ω SMA connectors, and had both fabricated at MSU.
+An ECE 405 project, done with Grant Bell. A substrate integrated waveguide (SIW) guides the TE10 mode between two walls of vias in a PCB, with lower loss than microstrip in S-band. We designed a two-port waveguide and a three-port power divider in Ansys HFSS on a Rogers substrate, with triangular tapers from microstrip to 50 Ω SMA connectors, and had both fabricated at MSU.
 
 ## Waveguide
 
