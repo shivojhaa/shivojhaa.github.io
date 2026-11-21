@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SUBSTRATE INTEGRATED WAVEGUIDE AND POWER DIVIDER
-description: A 3 GHz substrate integrated waveguide and a three-port SIW power divider on a Rogers board, designed in HFSS. The waveguide matched its simulation; the divider could only be verified in simulation.
+description: A 2-port substrate integrated waveguide and a 3-port power divider on a Rogers substrate, designed in Ansys HFSS and fabricated. The waveguide matched the simulation and the power divider is only functional in simulation.
 img: assets/img/projects/siw_model.png
 importance: 5
 category: coursework
@@ -16,12 +16,16 @@ category: coursework
     HFSS model of the waveguide.
 </div>
 
-An ECE 405 project, done with Grant Bell. A substrate integrated waveguide (SIW) guides the TE10 mode between two walls of vias in a PCB, with lower loss than microstrip in S-band. We designed a two-port waveguide and a three-port power divider in Ansys HFSS on a Rogers substrate, with triangular tapers from microstrip to 50 Ω SMA connectors, and had both fabricated at MSU.
+Project 1 of ECE 405, done with Grant Bell, explores the design of substrate integrated waveguides, or SIWs. An SIW is a type of waveguide that is integrated into a PCB substrate, and the wave is guided by walls of vias drilled into the substrate. It has lower losses than microstrip in the S-band. We designed a 2-port waveguide and a 3-port power divider in Ansys HFSS on a Rogers substrate, and both were fabricated by Mr. Brian Wright at MSU Technologies.
 
 ## Waveguide
 
-The design used 1 mm vias at a 2 mm pitch with the via walls 3.87 cm apart; that spacing, not the length, sets the cutoff of about 2.06 GHz, so we chose a 50 mm length. The 50 Ω feed line is 3.65 mm wide, and the taper, tuned in HFSS, is 7.3 mm wide and 38 mm long, about 11° from the guide. After fabrication we pressed copper rivets into the vias and soldered the SMA connectors. Measured on a FieldFox VNA, the waveguide transmits from about 2.2 to 6.1 GHz with close to zero loss and S11 around −40 dB at 3 GHz, within ±0.1 GHz and ±0.5 dB of the HFSS result.
+We were given the via diameter (1 mm), the pitch between vias (2 mm) and the spacing between the via walls (3.87 cm). The distance between the via walls sets how the waveguide behaves, not its length, so we chose a length of 50 mm. The 50 Ω microstrip is 3.65 mm wide from ADS LineCalc and 10 mm long. We tuned the triangular taper in HFSS and it ended up 7.3 mm wide and 38 mm long, about a 10.87 degree angle with the SIW. After fabrication we pressed copper rivets into the vias and soldered 3.5 mm SMA connectors to the ports.
+
+We measured it on a Keysight FieldFox VNA. The waveguide has broadband transmission from about 2.2 to 6.1 GHz with near-zero loss, and S11 peaks at -40 dB around 3 GHz, our center frequency. The measurement matched our HFSS simulation within ±0.1 GHz and ±0.5 dB. For the TE10 mode the cutoff frequency is about 2.06 GHz.
 
 ## Power divider
 
-The divider reuses the waveguide and splits the input between ports 2 and 3 with an iris, a partial wall of vias. The via pitch had to be relaxed from 2 mm to 4 mm because the board could not otherwise be made with the equipment at MSU; in simulation that reduces the bandwidth by about 0.4 GHz. We measured it on a two-port VNA without terminating the third port, so reflections dominate the response and the isolation cannot be judged. Without a matched load on the unused port the measurement is not valid, so we can only call the divider working in simulation.
+The power divider reuses our SIW design, with an iris, an additional wall of vias, between ports 2 and 3. Late in the design we had to change the via pitch from 2 mm to 4 mm, because the large number of vias made the board non-manufacturable with the equipment at MSU. In simulation this decreased the bandwidth by about 0.4 GHz.
+
+The FieldFox only has two ports and we did not terminate the third port with a 50 Ω load, so we see resonance in our S-parameters and no isolation between ports 2 and 3. Because of this we can only call the power divider functional in a simulated environment.

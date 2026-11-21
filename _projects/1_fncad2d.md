@@ -1,27 +1,27 @@
 ---
 layout: page
 title: FNCAD2D
-description: A 2D device simulator for GaN HEMTs that adds hot-electron transport (Fermi kinetics transport) to a drift-diffusion solver, checked against exact limits, a measured HEMT and a published benchmark.
+description: A 2D device simulator for GaN HEMTs that adds hot-electron transport (Fermi kinetics transport) to a drift-diffusion solver. I checked it against exact limits, a measured HEMT and a published benchmark.
 importance: 1
 category: research
 ---
 
-FnCAD2D is a two-dimensional semiconductor device simulator, written in Python, for modelling GaN high-electron-mobility transistors (HEMTs) from DC through RF. It grows out of FnCAD, a 1D drift-diffusion solver, and adds hot-electron transport based on the Fermi kinetics transport (FKT) framework of Miller et al.
+FnCAD2D is a two-dimensional semiconductor device simulator written in Python for modeling GaN HEMTs from DC through RF. It started from FnCAD, a 1D drift-diffusion solver. I added hot-electron transport using the Fermi kinetics transport (FKT) framework of Miller et al.
 
 ## Why
 
-GaN HEMTs operate with electric fields of hundreds of kV/cm near the drain-side gate edge. There the electrons heat up to thousands of kelvin, so their velocity and where they deposit energy depend on their own temperature, not only on the local field. Standard drift-diffusion cannot describe this. FKT treats the electrons at every mesh node as a Fermi gas with its own Fermi level and temperature, and solves for particle and energy conservation together with Poisson's equation.
+In a GaN HEMT the electric field near the drain side of the gate is hundreds of kV/cm. The electrons heat up to thousands of kelvin there, so their velocity and where they give up their energy depend on their own temperature and not only on the local field. Drift-diffusion cannot describe this. In FKT every mesh node has its own electron gas with its own Fermi level and temperature, and the energy equation is solved together with particle conservation and Poisson's equation.
 
 ## What the simulator does
 
-- **Mesh:** Delaunay triangulation with Voronoi control volumes (box method) on arbitrary 2D cross-sections, including T-gates.
-- **Transport:** drift-diffusion with Scharfetter–Gummel fluxes, or FKT: densities and fluxes from incomplete Fermi–Dirac integrals, a generalized Scharfetter–Gummel flux, heat flow from the thermodynamics of Fermi gases, and energy relaxation to the lattice.
-- **Device physics:** heterojunctions and Schottky gates with thermionic emission (including energy flux), polarization charges, bulk and surface traps, quantum confinement of the 2DEG, and lattice self-heating.
-- **RF:** small-signal analysis giving S-parameters, $f_T$ and $f_{max}$, with pad parasitics embedded.
+- **Mesh:** Delaunay triangulation with Voronoi control volumes (box method) on any 2D cross-section, including T-gates.
+- **Transport:** drift-diffusion with Scharfetter–Gummel fluxes, or FKT, which uses incomplete Fermi–Dirac integrals, a generalized Scharfetter–Gummel flux, heat flow from the thermodynamics of Fermi gases, and energy relaxation to the lattice.
+- **Device physics:** heterojunctions and Schottky gates with thermionic emission, polarization charges, bulk and surface traps, quantum confinement of the 2DEG, and lattice self-heating.
+- **RF:** small-signal analysis that gives S-parameters, $f_T$ and $f_{max}$, with the pad parasitics included.
 
 ## Validation
 
-Before any comparison with a real device, the solver was checked against exact limits:
+Before comparing with any real device I checked the solver against exact limits:
 
 | Test                                              | Result                  |
 | ------------------------------------------------- | ----------------------- |
@@ -35,15 +35,17 @@ Before any comparison with a real device, the solver was checked against exact l
 
 ## Comparison with a measured device
 
-The simulator was applied, without fitting, to a published AlGaN/GaN HEMT (0.25 µm gate, Vitanov et al., IEEE TED 2012). At $V_{GS} = -1.5$ V and $V_{DS} = 7$ V, including self-heating and contact resistance, it gives a drain current of 0.31 A/mm (measured 0.27 A/mm) and $f_T = 47$ GHz (measured 31 GHz).
+I applied it, without fitting, to a published AlGaN/GaN HEMT (0.25 µm gate, Vitanov et al., IEEE TED 2012). At $V_{GS} = -1.5$ V and $V_{DS} = 7$ V, with self-heating and contact resistance, it gives a drain current of 0.31 A/mm (measured 0.27 A/mm) and $f_T = 47$ GHz (measured 31 GHz).
 
-The $f_T$ gap is informative rather than a failure. Since $f_T \approx g_m / 2\pi(C_{gs} + C_{gd})$, I compared each part: the simulated transconductance is about 12% _below_ the measurement, so the transport is not too fast. The gate capacitance must instead be about 60% too small. The likely causes are gate geometry the paper does not specify (T-gate head, passivation thickness), three-dimensional layout capacitance that a 2D cross-section cannot include, and mesh resolution at the gate corners.
+To see why $f_T$ comes out too high, I looked at $f_T \approx g_m / 2\pi(C_{gs} + C_{gd})$. The simulated $g_m$ is about 12% below the measured one, so the transport is not too fast. That leaves the gate capacitance, which is about 60% too small. The likely causes are gate geometry the paper does not give (the T-gate head and the passivation thickness), 3D layout capacitance that a 2D cross-section cannot include, and the mesh at the gate corners.
 
 ## Benchmark against published FKT
 
-To test the FKT implementation independently of fabrication unknowns, I reproduced the GaN HEMT simulation of Tunga et al. (2022), which compares FKT with a commercial hydrodynamic solver on a fully specified device, using their geometry and parameters and no fitting. The electron temperature in the channel peaks at 4694 K under the middle of the gate, against about 4700 K for their FKT and about 15,500 K for their commercial solver. With each curve divided by its own on-state current, my drain-current curves agree with theirs to within a few percent in the on-state. Near threshold at high drain bias my currents are higher than theirs (for example 0.36 against 0.29 of the on-state current at $V_{GS} = -2$ V, $V_{DS} = 10$ V), and a finer mesh does not change that. The paper's values are read off its figures, so they are good to a few percent at best.
+To test the FKT part without fabrication unknowns, I reproduced the GaN HEMT simulation of Tunga et al. (2022), which compares FKT with a commercial hydrodynamic solver on a fully specified device. I used their geometry and parameters and did not fit anything. The electron temperature in the channel peaks at 4694 K under the middle of the gate. Their FKT gives about 4700 K and their commercial solver about 15,500 K.
+
+With each curve divided by its own on-state current, my drain current curves agree with theirs to within a few percent in the on-state. Near threshold at high drain bias my currents are higher than theirs (0.36 against 0.29 of the on-state current at $V_{GS} = -2$ V and $V_{DS} = 10$ V), and a finer mesh does not change that. I read their values off their figures, so they are only good to a few percent.
 
 ## Lessons
 
-- **Convergence is physics too.** Nearly empty electron gases in the buffer were never truly converged because the convergence test (rightly) ignored them; a later, longer solve exposed them and diverged. Letting such gases fill to a negligible density in one Newton step fixed it without changing any result.
-- **Exactness matters at equilibrium.** The paper's arithmetic-mean temperature in the flux produces spurious current next to the degenerate 2DEG; a logarithmic mean makes the equilibrium current vanish exactly.
+- **Convergence:** nearly empty electron gases in the buffer were never really converged, because the convergence test ignores them. A longer solve exposed them and it diverged. Letting those gases fill up to a negligible density in one Newton step fixed it and did not change any result.
+- **Equilibrium:** the arithmetic-mean temperature in the flux from the paper gives a spurious current next to the degenerate 2DEG. A logarithmic mean makes the equilibrium current exactly zero.

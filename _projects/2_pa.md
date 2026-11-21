@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MY FIRST (FAILED) PA
-description: A 0.8 to 1.2 GHz power amplifier on a GaAs pHEMT, designed in ADS, built and measured. It missed its specifications, with the whole response landing 300 to 400 MHz too low.
+description: Design, fabrication and characterization of an RF power amplifier for the 0.8 to 1.2 GHz band using a SKY65050 GaAs pHEMT. It was our first amplifier and it failed to meet specifications, with a leftward shift of 300-400 MHz.
 img: assets/img/projects/pa_board.png
 importance: 3
 category: coursework
@@ -16,11 +16,11 @@ category: coursework
     The fabricated board.
 </div>
 
-An ECE 404 project, done with Avery Wiklund (now at CU Boulder, working with Dr. Taylor Barton): design, build and measure an RF power amplifier around the Skyworks SKY65050 GaAs pHEMT on a Rogers RO4350B board, for the 0.8 to 1.2 GHz band in a 50 Ω system. The targets were S21 = 17 dB ± 1 dB, and S11 and S22 below −8 dB across the band.
+This ECE 404 project, done with Avery Wiklund (now at CU Boulder, working with Dr. Taylor Barton), was the design, fabrication and characterization of an RF power amplifier using the SKY65050 transistor, a GaAs pHEMT. We designed it on a Rogers RO4350B substrate with soldered components for the 0.8 to 1.2 GHz band. The objective was an S21 of 17 dB with a tolerable limit of ±1 dB, and an S11 and S22 of less than -8 dB, in a 50 Ω system.
 
 ## Design
 
-We designed it in Keysight ADS: a stability circuit, input and output matching networks that combine lumped and distributed elements, and a DC bias network (V_GS = −0.4 V, V_DS = 3.0 V) with RF/DC blocks. We checked it with circuit and electromagnetic simulations, laid it out in ADS, had the board fabricated at MSU, and soldered the surface-mount parts ourselves.
+We designed it in Keysight ADS using circuit-based and EM simulations. It has a stability circuit, input and output matching networks that combine lumped and distributed elements, and a DC bias network (V_GS of -0.4 V and V_DS of 3.0 V) with RF/DC blocks. The layout was also done in ADS. The boards were fabricated at MSU and we soldered the components ourselves.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -33,7 +33,9 @@ We designed it in Keysight ADS: a stability circuit, input and output matching n
 
 ## Results
 
-The first board did not work. Solder shorted connections near port 2, the transistor was never soldered properly so it could not be biased, and the layout was too small to work on by hand. On the second board the amplifier had gain, but in the wrong place: about 14 dB, centred near 0.5 GHz, instead of 17 dB across 0.8 to 1.2 GHz, and the input and output match moved down with it. It did not meet the specification.
+Our first attempt did not work. It was our first time soldering surface-mount parts, so we were learning on the job, and some solder shorted connections near port 2. We never soldered the pHEMT properly, so we could not bias it and saw practically no S21. We also made the layout smaller than we wanted, which made the soldering harder.
+
+On the second attempt we saw some S21, or gain, but at the wrong band: about 14 dB near 0.5 GHz instead of 17 dB across 0.8 to 1.2 GHz. S11 and S22 shifted left with it. We saw a leftward shift of 300-400 MHz and the amplifier failed to meet the specifications.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -46,6 +48,6 @@ The first board did not work. Solder shorted connections near port 2, the transi
 
 ## What went wrong
 
-The electromagnetic simulation of the layout showed the same 300 to 400 MHz shift from the schematic result, and it tracked the measurement closely; the circuit-only simulation did not. We had put transmission lines between the component pads without accounting for their electrical length, which added reflections and pulled the match down in frequency. One capacitor pad also had no gap, so we cut one by hand, which probably added to the shift.
+The EM simulation matched the real-world performance and the circuit simulation did not. That was the difference between a working and a dysfunctional amplifier, so in the future we will pay more attention to EM simulations. We also left out the electrical length of the transmission lines between our pads, which caused compounding reflections, so the match got worse as the frequency went up. One capacitor on the S22 side had no spacing, so we used tweezers to force a gap, which could have added to the shift.
 
-The lesson: the electromagnetic simulation, not the circuit simulation, decides whether an RF layout works, so start from it. Also, do not make the board smaller than you can solder by hand.
+From this we learned how much proper soldering matters, to verify the layout carefully, and not to make the board smaller than we can solder.
